@@ -12,7 +12,7 @@ app.use(express.json())
 
 // const uri = 'mongodb://localhost:27017'
 
-const uri = "mongodb+srv://johurul-haque:PtPhbNwY7c4RFINt@learningdb.g9rdpy8.mongodb.net/?retryWrites=true&w=majority";
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@learningdb.g9rdpy8.mongodb.net/?retryWrites=true&w=majority`;
 
 const client = new MongoClient(uri, {
   serverApi: {
@@ -24,7 +24,7 @@ const client = new MongoClient(uri, {
 
 async function run() {
   try {
-    await client.connect()
+    client.connect()
 
     app.get('/', (req, res) => res.send('<h1>Hello world!</h1>'))
 
