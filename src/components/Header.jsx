@@ -1,9 +1,11 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../provider/Authentication";
 import Logo from "./Logo";
 import Profile from "./Profile";
 
 const Header = () => {
-  const user = null;
+  const { user } = useContext(AuthContext);
 
   const toggleNav = () => {
     document.querySelector("#main-nav").classList.toggle("max-md:scale-0");
@@ -12,6 +14,7 @@ const Header = () => {
 
   const removeNav = () => {
     document.querySelector("#main-nav").classList.add("max-md:scale-0");
+    document.querySelector("body").classList.remove("overflow-hidden");
   };
   return (
     <header className="sticky top-0 w-full border-b bg-slate-50/95 px-4 py-3 backdrop-blur-3xl sm:px-6 lg:px-8">
@@ -41,7 +44,12 @@ const Header = () => {
             })}
           </ul>
           {user ? (
-            <Profile />
+            <>
+              <Profile />
+              <button className="bg rounded-full bg-red-300/75 bg-gradient-to-br px-6 py-1 text-lg font-semibold text-red-950 ring-red-300 ring-offset-2 transition-all duration-300 hover:bg-red-500 focus:ring">
+                Log Out
+              </button>
+            </>
           ) : (
             <Link
               to={"/login"}
