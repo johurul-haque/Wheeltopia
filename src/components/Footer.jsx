@@ -14,7 +14,7 @@ const Footer = () => {
               soar in our playful car wonderland.
             </p>
           </div>
-          <div>
+          <div className="max-[480px]:col-span-2">
             <p className="text-base font-semibold ">Company</p>
             <address className="mt-3 text-sm text-gray-800">
               <p>123 Main Street</p>
@@ -29,7 +29,7 @@ const Footer = () => {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="h-5 w-5 stroke-gray-700"
+                  className="aspect-square w-5 stroke-gray-700"
                 >
                   <path
                     strokeLinecap="round"

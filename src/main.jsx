@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./index.css";
+import App from "./routes/App.jsx";
+import { Login, Register } from "./routes/Authenticate";
 import ErrorPage from "./routes/ErrorPage";
 import Root from "./routes/root.jsx";
 
@@ -12,8 +14,16 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/:id",
-        element: <h1>hello world!</h1>,
+        path: "/",
+        element: <App />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
       },
     ],
   },

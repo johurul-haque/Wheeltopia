@@ -6,7 +6,7 @@ const Root = () => {
   return (
     <>
       <Header />
-      <main className="flex-1">
+      <main className="w-full flex-1">
         <Outlet />
       </main>
       <Footer />
