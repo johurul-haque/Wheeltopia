@@ -1,6 +1,9 @@
 import { Dropdown } from "../components/FAQ";
+import useTitle from "../hooks/useTitle";
 
 const Blog = () => {
+  useTitle("Blog");
+
   return (
     <main className="container my-7 max-w-lg flex-1 space-y-3 sm:px-0">
       {[

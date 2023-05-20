@@ -27,11 +27,11 @@ const Categories = ({ data }) => {
       <p className="text-center text-lg font-light text-gray-800">
         Shop our heart-warming products from their category
       </p>
-      <div className="my-5 flex flex-wrap justify-center gap-3 sm:gap-x-5">
+      <div className="my-5 flex gap-3 px-3 max-sm:overflow-x-auto sm:justify-center sm:gap-x-5">
         {["Sports Car", "SUV", "Fire Truck"].map((element, i) => (
           <button
             onClick={selectCategory}
-            className="rounded-full border px-5 py-1 outline-none ring-gray-200 ring-offset-2 transition duration-200 hover:bg-gray-200 focus:ring"
+            className="min-w-fit rounded-full border px-5 py-1 outline-none ring-gray-200 ring-offset-2 transition duration-200 hover:bg-gray-200 focus:ring"
             key={i}
           >
             {element}
@@ -42,7 +42,7 @@ const Categories = ({ data }) => {
         <h3 className="mb-5 border-l-8 border-emerald-500 pl-3 text-xl font-medium text-gray-800">
           {info[1].title}
         </h3>
-        <div className="grid gap-5 sm:grid-cols-[repeat(2,16rem)] md:grid-cols-[repeat(3,16rem)] lg:grid-cols-[repeat(4,16rem)]">
+        <div className="grid justify-center gap-5 sm:grid-cols-[repeat(2,16rem)] md:grid-cols-[repeat(3,16rem)] lg:grid-cols-[repeat(4,16rem)]">
           {info[0].map((obj) => (
             <Cars key={obj._id} info={obj} />
           ))}

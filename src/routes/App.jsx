@@ -13,7 +13,6 @@ const App = () => {
   const toysData = useLoaderData(),
     [toys, setToys] = useState(toysData);
 
-  console.log(toys);
   return (
     <>
       <section className="relative min-h-[55rem]">
