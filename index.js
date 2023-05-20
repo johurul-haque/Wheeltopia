@@ -25,7 +25,9 @@ async function run() {
   try {
     client.connect();
 
-    const database = client.db("toysDB").collection("toy");
+    const database = client.db("toysDB"),
+      toys = database.collection("toys"),
+      userToys = database.collection("userToys");
 
     app.get("/", (req, res) => {
       res.send(`<main>
@@ -36,8 +38,21 @@ async function run() {
     });
 
     app.get("/toys", async (req, res) => {
-      const cursor = database.find(),
+      const cursor = toys.find(),
         result = await cursor.toArray();
+
+      res.send(result);
+    });
+
+    app.get("/collection", async (req, res) => {
+      const cursor = userToys.find(),
+        result = await cursor.toArray();
+
+      res.send(result);
+    });
+
+    app.post("/collection/addtoy", async (req, res) => {
+      const result = await userToys.insertOne(req.body);
       res.send(result);
     });
 
