@@ -28,7 +28,6 @@ const Authentication = ({ children }) => {
   };
 
   const popupLogin = () => {
-    setLoading(true);
     signInWithPopup(auth, googleProvider)
       .then(() => {})
       .catch((error) => console.error(error.message));
