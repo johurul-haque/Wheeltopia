@@ -1,12 +1,18 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import useTitle from "../hooks/useTitle";
 import { AuthContext } from "../provider/Authentication";
 
 const Login = () => {
+  useTitle("Login");
+
   const [error, setError] = useState(null),
     [emailError, setEmailError] = useState(null);
 
   const { logIn, setUser, popupLogin } = useContext(AuthContext);
+
+  const from = useLocation().state?.from?.pathname || "/",
+    navigate = useNavigate();
 
   const login = (e) => {
     e.preventDefault();
@@ -27,6 +33,7 @@ const Login = () => {
         .then((userCredintial) => {
           setUser(userCredintial.user);
           e.target.reset();
+          navigate(from, { replace: true });
         })
         .catch((error) => {
           console.error(error.message);
@@ -58,6 +65,7 @@ const Login = () => {
           name="email"
           className="h-12 rounded border-2 px-4 outline-none transition-all duration-200 focus:border-green-500"
           placeholder="Email address"
+          required
         />
         {emailError}
         <input
@@ -65,6 +73,7 @@ const Login = () => {
           placeholder="Password"
           name="password"
           className="h-12 rounded border-2 px-4 outline-none transition-all duration-200 focus:border-green-500"
+          required
         />
         {error}
         <button className="h-12 rounded bg-gradient-to-r from-green-600 to-lime-500 text-lg font-semibold text-white outline-none ring-green-500 ring-offset-2 focus:ring">

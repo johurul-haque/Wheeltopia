@@ -1,9 +1,12 @@
 import { updateProfile } from "firebase/auth";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import useTitle from "../hooks/useTitle";
 import { AuthContext } from "../provider/Authentication";
 
 const Register = () => {
+  useTitle("Register");
+
   const [error, setError] = useState(null);
 
   const { auth, createUser, popupLogin } = useContext(AuthContext);
@@ -20,7 +23,7 @@ const Register = () => {
     console.log({ email, user, password, profile });
     if (password.length < 6) {
       setError(
-        <p className="text-sm">
+        <p className="-mt-2 text-left text-sm">
           <span className="text-red-400">*</span> Password must contain 6
           character
         </p>
@@ -34,6 +37,7 @@ const Register = () => {
           });
           console.log(userCredintial.user);
           form.reset();
+          setError(null);
         })
         .catch((error) => console.error(error.message));
     }
@@ -74,7 +78,7 @@ const Register = () => {
           className="h-12 rounded border-2 px-4 outline-none transition-all duration-200 focus:border-green-500"
           placeholder="Photo URL"
         />
-        <button className="h-12 rounded bg-gradient-to-r from-green-600 to-lime-500 text-lg font-semibold text-white outline-none ring-green-500 ring-offset-2 focus:ring">
+        <button className="h-12 rounded bg-gradient-to-r from-green-600 to-lime-500 text-lg font-semibold text-white outline-none ring-green-500 ring-offset-2 hover:from-green-600/90 hover:to-lime-500/90 focus:ring">
           Continue
         </button>
       </form>
