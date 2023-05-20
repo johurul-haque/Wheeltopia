@@ -27,6 +27,14 @@ async function run() {
 
     const database = client.db("toysDB").collection("toy");
 
+    app.get("/", (req, res) => {
+      res.send(`<main>
+      <h1>Hi, I&apos;m Johurul!</h1>
+      <p>An aspiring front-end dev, creating high quality web apps.</p>
+      <a href="https://www.linkedin.com/in/johurul-haque/">Linkedin</a>
+      </main>`);
+    });
+
     app.get("/toys", async (req, res) => {
       const cursor = database.find(),
         result = await cursor.toArray();
