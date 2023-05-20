@@ -29,7 +29,7 @@ export const Dropdown = ({ ques, ans }) => {
 
 const Faq = () => {
   return (
-    <section className="container mb-9 grid max-w-md gap-3 sm:px-0">
+    <section className="mx-auto mb-9 grid w-full max-w-md gap-3 max-sm:px-4">
       <h2 className="font-fredoka text-3xl font-medium text-gray-900">FAQ</h2>
       {[
         [

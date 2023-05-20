@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import Loading from "../components/Loading";
-import { AuthContext } from "../providers/AuthProvider";
+import { AuthContext } from "../provider/Authentication";
 
 // eslint-disable-next-line react/prop-types
 const Private = ({ children }) => {

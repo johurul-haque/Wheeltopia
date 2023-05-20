@@ -3,10 +3,13 @@ import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./index.css";
 import Authentication from "./provider/Authentication";
+import Addtoy from "./routes/Addtoy";
 import App from "./routes/App.jsx";
 import { Login, Register } from "./routes/Authenticate";
 import Blog from "./routes/Blog";
+import Collection from "./routes/Collection";
 import ErrorPage from "./routes/ErrorPage";
+import Private from "./routes/Private.jsx";
 import Root from "./routes/root.jsx";
 
 const router = createBrowserRouter([
@@ -25,7 +28,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/addtoys",
-        element: <Blog />,
+        element: (
+          <Private>
+            <Addtoy />
+          </Private>
+        ),
+      },
+      {
+        path: "/collection",
+        element: (
+          <Private>
+            <Collection />
+          </Private>
+        ),
       },
       {
         path: "/login",
