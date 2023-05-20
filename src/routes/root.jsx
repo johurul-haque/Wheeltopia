@@ -8,13 +8,14 @@ import { AuthContext } from "../provider/Authentication";
 const Root = () => {
   useTitle("");
   const { loading } = useContext(AuthContext);
+
   return (
     <>
       <Header />
       <main
         className={`${
-          loading && "flex items-center justify-center"
-        } mt-1 w-full flex-1`}
+          loading && "mt-1 flex items-center justify-center"
+        } w-full flex-1`}
       >
         <Outlet />
       </main>

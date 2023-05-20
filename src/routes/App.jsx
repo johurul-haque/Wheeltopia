@@ -1,4 +1,6 @@
+import { useState } from "react";
 import Marquee from "react-fast-marquee";
+import { useLoaderData } from "react-router-dom";
 import faq from "../assets/FAQ.jpg";
 import wave from "../assets/wave.svg";
 import Cards from "../components/Cards";
@@ -8,6 +10,10 @@ import Gallery from "../components/Gallery";
 import Services from "../components/Services";
 
 const App = () => {
+  const toysData = useLoaderData(),
+    [toys, setToys] = useState(toysData);
+
+  console.log(toys);
   return (
     <>
       <section className="relative min-h-[55rem]">
@@ -32,15 +38,15 @@ const App = () => {
               gradientColor={[52, 211, 153]}
               gradientWidth={100}
             >
-              <Cards />
-              <Cards />
-              <Cards />
+              {toys.map((obj) => (
+                <Cards data={obj} key={obj._id} />
+              ))}
             </Marquee>
           </div>
         </div>
       </section>
-      <Gallery />
-      <Categories />
+      <Gallery data={toys} />
+      <Categories data={toys} />
       <div className="mx-auto my-14 flex max-w-7xl flex-wrap items-center">
         <img
           src={faq}

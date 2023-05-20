@@ -1,12 +1,22 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import Cars from "./Cars";
 
-const Categories = () => {
-  const [info, setInfo] = useState({ title: "Sports Car", name: "Wheeltopia" });
+const Categories = ({ data }) => {
+  const sportsCar = data.filter(
+    (toy) => toy.category.toLowerCase() == "sports car"
+  );
+
+  const [info, setInfo] = useState([sportsCar, { title: "Sports Car" }]);
 
   const selectCategory = (e) => {
     const title = e.currentTarget.innerText;
-    setInfo({ title, name: "Not Wheeltopia" });
+
+    const category = data.filter(
+      (toy) => toy.category.toLowerCase() == title.toLowerCase()
+    );
+
+    setInfo([category, { title }]);
   };
 
   return (
@@ -17,7 +27,7 @@ const Categories = () => {
       <p className="text-center text-lg font-light text-gray-800">
         Shop our heart-warming products from their category
       </p>
-      <div className="my-5 flex justify-center gap-5">
+      <div className="my-5 flex flex-wrap justify-center gap-3 sm:gap-x-5">
         {["Sports Car", "SUV", "Fire Truck"].map((element, i) => (
           <button
             onClick={selectCategory}
@@ -30,13 +40,12 @@ const Categories = () => {
       </div>
       <section className="mt-7 border-t pt-5">
         <h3 className="mb-5 border-l-8 border-emerald-500 pl-3 text-xl font-medium text-gray-800">
-          {info.title}
+          {info[1].title}
         </h3>
-        <div className="flex flex-wrap justify-center gap-5">
-          <Cars info={info} />
-          <Cars info={info} />
-          <Cars info={info} />
-          <Cars info={info} />
+        <div className="grid gap-5 sm:grid-cols-[repeat(2,16rem)] md:grid-cols-[repeat(3,16rem)] lg:grid-cols-[repeat(4,16rem)]">
+          {info[0].map((obj) => (
+            <Cars key={obj._id} info={obj} />
+          ))}
         </div>
       </section>
     </section>

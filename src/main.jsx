@@ -21,6 +21,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <App />,
+        loader: () => fetch(`${import.meta.env.VITE_SERVER}/toys`),
       },
       {
         path: "/blogs",
