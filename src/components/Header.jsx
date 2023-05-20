@@ -31,18 +31,17 @@ const Header = () => {
             {[
               ["Home", "/"],
               ["All Toys", "/alltoys"],
-            ].map(([title, path], i) => {
-              return (
-                <li key={i} onClick={removeNav}>
-                  <Link
-                    className="outline-none transition-all duration-200 hover:bg-gradient-to-r hover:from-green-700 hover:from-50% hover:to-lime-500 hover:bg-clip-text hover:text-transparent focus:bg-gradient-to-r focus:from-green-700 focus:from-50% focus:to-lime-500 focus:bg-clip-text focus:text-transparent"
-                    to={path}
-                  >
-                    {title}
-                  </Link>
-                </li>
-              );
-            })}
+              ["Blogs", "/blogs"],
+            ].map(([title, path], i) => (
+              <li key={i} onClick={removeNav}>
+                <Link
+                  className="outline-none transition-all duration-200 hover:bg-gradient-to-r hover:from-green-700 hover:from-50% hover:to-lime-500 hover:bg-clip-text hover:text-transparent focus:bg-gradient-to-r focus:from-green-700 focus:from-50% focus:to-lime-500 focus:bg-clip-text focus:text-transparent"
+                  to={path}
+                >
+                  {title}
+                </Link>
+              </li>
+            ))}
             {user &&
               [
                 ["My Toys", "/collection"],

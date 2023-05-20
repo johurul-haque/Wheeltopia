@@ -5,6 +5,7 @@ import "./index.css";
 import Authentication from "./provider/Authentication";
 import App from "./routes/App.jsx";
 import { Login, Register } from "./routes/Authenticate";
+import Blog from "./routes/Blog";
 import ErrorPage from "./routes/ErrorPage";
 import Root from "./routes/root.jsx";
 
@@ -17,6 +18,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <App />,
+      },
+      {
+        path: "/blogs",
+        element: <Blog />,
+      },
+      {
+        path: "/addtoys",
+        element: <Blog />,
       },
       {
         path: "/login",

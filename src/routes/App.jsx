@@ -1,7 +1,10 @@
 import Marquee from "react-fast-marquee";
+import faq from "../assets/FAQ.jpg";
 import wave from "../assets/wave.svg";
 import Cards from "../components/Cards";
 import Categories from "../components/Categories";
+import Faq from "../components/FAQ";
+import Gallery from "../components/Gallery";
 import Services from "../components/Services";
 
 const App = () => {
@@ -36,9 +39,16 @@ const App = () => {
           </div>
         </div>
       </section>
-
+      <Gallery />
       <Categories />
-
+      <div className="mx-auto my-14 flex max-w-7xl flex-wrap items-center">
+        <img
+          src={faq}
+          role="presentation"
+          className="aspect-square object-contain px-5 mix-blend-color-burn md:w-[40%]"
+        />
+        <Faq />
+      </div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Services />
       </div>

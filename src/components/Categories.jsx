@@ -10,7 +10,7 @@ const Categories = () => {
   };
 
   return (
-    <section className="font-fredoka mx-auto -mt-12 max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="font-fredoka mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <h2 className="mb-1 text-center text-3xl font-medium text-gray-900">
         Shop by Category
       </h2>
