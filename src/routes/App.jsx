@@ -11,7 +11,7 @@ import Services from "../components/Services";
 
 const App = () => {
   const toysData = useLoaderData(),
-    [toys, setToys] = useState(toysData);
+    [toys] = useState(toysData);
 
   return (
     <>

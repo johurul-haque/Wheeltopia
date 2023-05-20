@@ -12,6 +12,8 @@ import ErrorPage from "./routes/ErrorPage";
 import Private from "./routes/Private.jsx";
 import Root from "./routes/root.jsx";
 
+const server = import.meta.env.VITE_SERVER;
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -21,7 +23,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <App />,
-        loader: () => fetch(`${import.meta.env.VITE_SERVER}/toys`),
+        loader: () => fetch(`${server}/toys`),
       },
       {
         path: "/blogs",
@@ -37,6 +39,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/collection",
+        loader: () => fetch(`${server}/collection`),
         element: (
           <Private>
             <Collection />

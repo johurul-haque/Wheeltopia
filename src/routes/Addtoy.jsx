@@ -29,7 +29,7 @@ const Addtoy = () => {
       detail_description: desc,
     };
 
-    fetch(`${import.meta.env.VITE_SERVER}/addtoy`, {
+    fetch(`${import.meta.env.VITE_SERVER}/collection/addtoy`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
