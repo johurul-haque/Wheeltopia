@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import "aos/dist/aos.css";
 import { useState } from "react";
 import Cars from "./Cars";
 

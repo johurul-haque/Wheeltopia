@@ -1,3 +1,7 @@
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
+
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line react/prop-types
 const Gallery = ({ data }) => {
@@ -13,6 +17,7 @@ const Gallery = ({ data }) => {
       </div>
       {data.slice(1, 12).map((toy) => (
         <img
+          data-aos="fade-up"
           key={toy._id}
           src={toy.picture_url}
           alt={toy.name}

@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
+import AOS from "aos";
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import Delete from "./Delete";
+AOS.init();
 
 const UpdateCard = ({ data, state, changeState }) => {
   let [isOpen, setIsOpen] = useState(false);
@@ -29,7 +31,10 @@ const UpdateCard = ({ data, state, changeState }) => {
   };
 
   return (
-    <article className="flex items-center gap-4 rounded-md border p-4 max-[375px]:flex-wrap">
+    <article
+      data-aos="fade-up"
+      className="flex items-center gap-4 rounded-md border p-4 max-[375px]:flex-wrap"
+    >
       <img
         src={data.picture_url}
         alt={data.name}
@@ -112,7 +117,10 @@ const UpdateCard = ({ data, state, changeState }) => {
 const ShowCard = ({ data }) => {
   const price = (data.price + "").split(".");
   return (
-    <article className="relative flex max-w-full items-center gap-4 rounded-md border p-4 max-sm:flex-wrap">
+    <article
+      data-aos="fade-up"
+      className="relative flex max-w-full items-center gap-4 rounded-md border p-4 max-sm:flex-wrap"
+    >
       <img
         src={data.picture_url}
         alt={data.name}

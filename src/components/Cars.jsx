@@ -1,9 +1,11 @@
 /* eslint-disable react/prop-types */
+import AOS from "aos";
 import { Link } from "react-router-dom";
+AOS.init();
 
 const Cars = ({ info }) => {
   return (
-    <article className="grid rounded-md border bg-white p-4">
+    <article data-aos="fade-up" className="grid rounded-md border bg-white p-4">
       <h4 className="mt-1 text-lg font-medium text-gray-800">{info.name}</h4>
       <img
         src={info.picture_url}
