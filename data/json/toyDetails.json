@@ -1,6 +1,6 @@
 [
   {
-    "picture_url": "/images/sportscar.jpg",
+    "picture_url": "/images/sportscar.png",
     "name": "Speedy Racer",
     "seller_name": "John's Toy Store",
     "seller_email": "johnstoy@store.com",
@@ -33,7 +33,7 @@
     "detail_description": "Ignite the hero within with the Fire Hero Rescue Vehicle! This action-packed fire truck toy car is equipped with all the tools to save the day. With flashing lights, realistic sounds, and movable parts, it's perfect for young aspiring firefighters. Let their imagination soar as they race to extinguish imaginary fires!"
   },
   {
-    "picture_url": "/images/sportscar1.jpg",
+    "picture_url": "/images/sportscar1.png",
     "name": "Turbo Blast Race Car",
     "seller_name": "Speedy Toys",
     "seller_email": "info@speedytoys.com",
@@ -55,7 +55,7 @@
     "detail_description": "Embark on thrilling adventures with the Adventure Explorer 4x4! This rugged SUV toy car is built to conquer the toughest terrains. With its sturdy construction, realistic design, and removable roof, it's perfect for young explorers to create their own outdoor escapades!"
   },
   {
-    "picture_url": "/images/sportscar2.jpg",
+    "picture_url": "/images/sportscar2.png",
     "name": "Police Pursuit Cruiser",
     "seller_name": "Funland Toys",
     "seller_email": "info@funlandtoys.com",
@@ -88,7 +88,7 @@
     "detail_description": "Save lives with the Rescue Response Ambulance! This emergency fire truck toy car is equipped with all the essential tools for rescue missions. With flashing lights, realistic siren sounds, and medical accessories, it's perfect for young heroes to play out their rescue scenarios!"
   },
   {
-    "picture_url": "/images/sportscar3.jpg",
+    "picture_url": "/images/sportscar3.png",
     "name": "Formula Speedster",
     "seller_name": "Racing Toys",
     "seller_email": "sales@racingtoys.com",
@@ -110,7 +110,7 @@
     "detail_description": "Unleash the spirit of adventure with the Explorer Adventure Vehicle! This rugged SUV toy car is ready to tackle any outdoor expedition. With its realistic features, sturdy construction, and removable roof, it's perfect for young explorers to embark on imaginative journeys!"
   },
   {
-    "picture_url": "/images/sportscar4.jpg",
+    "picture_url": "/images/sportscar4.png",
     "name": "Raceway Police Cruiser",
     "seller_name": "Toys Unlimited",
     "seller_email": "sales@toysunlimited.com",
@@ -143,7 +143,7 @@
     "detail_description": "Fly to the rescue with the Rescue Helicopter Transporter! This versatile fire truck toy car transforms into a helicopter for daring rescue missions. With its rotating propellers, realistic sounds, and movable parts, it's perfect for young heroes to save the day!"
   },
   {
-    "picture_url": "/images/sportscar4.jpg",
+    "picture_url": "/images/sportscar4.png",
     "name": "Racing Legend Speedster",
     "seller_name": "Speedy Toys",
     "seller_email": "info@speedytoys.com",
@@ -154,7 +154,7 @@
     "detail_description": "Unleash your inner racing legend with the Racing Legend Speedster! This sleek and dynamic sports car toy is designed for ultimate speed and performance. With its aerodynamic shape, vibrant colors, and smooth wheels, it's perfect for young racers to create thrilling race scenarios."
   },
   {
-    "picture_url": "/images/sportscar5.jpg",
+    "picture_url": "/images/sportscar5.png",
     "name": "City Explorer Patrol Car",
     "seller_name": "Playland Toys",
     "seller_email": "sales@playlandtoys.com",
@@ -198,7 +198,7 @@
     "detail_description": "Race to the rescue with the Rescue Fire Engine! This fire truck toy car is ready to put out imaginary fires and save the day. With its flashing lights, realistic sounds, and extendable ladder, it's perfect for young heroes who dream of being firefighters."
   },
   {
-    "picture_url": "/images/sportscar.jpg",
+    "picture_url": "/images/sportscar.png",
     "name": "Super Speed Racer",
     "seller_name": "Racing Toys",
     "seller_email": "sales@racingtoys.com",
@@ -220,7 +220,7 @@
     "detail_description": "Embark on thrilling adventures with the Adventurer 4x4! This rugged SUV toy car is built to conquer the toughest terrains. With its sturdy construction, realistic design, and removable roof, it's perfect for young explorers to create their own outdoor escapades."
   },
   {
-    "picture_url": "/images/sportscar3.jpg",
+    "picture_url": "/images/sportscar3.png",
     "name": "Highway Patrol Police Car",
     "seller_name": "Playland Toys",
     "seller_email": "sales@playlandtoys.com",
