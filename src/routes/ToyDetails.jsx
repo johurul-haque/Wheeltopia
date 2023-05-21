@@ -11,7 +11,7 @@ const ToyDetails = () => {
           alt={data.name}
           height={300}
           width={240}
-          className="aspect-[4/5] w-60 border-8 border-white object-cover shadow-xl"
+          className="aspect-[4/5] w-60 border-8 border-white object-contain shadow-xl"
         />
         <div>
           <h1 className="mb-1 text-2xl font-semibold sm:mb-2 md:text-3xl">
