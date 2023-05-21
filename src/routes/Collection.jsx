@@ -1,10 +1,12 @@
+import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { UpdateCard } from "../components/RowCard";
 import useTitle from "../hooks/useTitle";
 
 const Collection = () => {
   useTitle("Collection");
-  const toys = useLoaderData();
+  const data = useLoaderData();
+  const [toys, setToys] = useState(data);
 
   return (
     <section className="mx-auto my-10 grid max-w-7xl gap-6 py-8 sm:px-6 lg:grid-cols-2 lg:px-8">
@@ -22,7 +24,14 @@ const Collection = () => {
           </Link>
         </div>
       ) : (
-        toys.map((obj) => <UpdateCard key={obj._id} data={obj} />)
+        toys.map((obj) => (
+          <UpdateCard
+            state={toys}
+            changeState={setToys}
+            key={obj._id}
+            data={obj}
+          />
+        ))
       )}
     </section>
   );

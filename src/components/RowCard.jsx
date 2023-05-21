@@ -1,7 +1,15 @@
 /* eslint-disable react/prop-types */
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import Delete from "./Delete";
 
-const UpdateCard = ({ data }) => {
+const UpdateCard = ({ data, state, changeState }) => {
+  let [isOpen, setIsOpen] = useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
   return (
     <article className="flex items-center gap-4 rounded-md border p-4">
       <img
@@ -9,7 +17,7 @@ const UpdateCard = ({ data }) => {
         alt={data.name}
         width={144}
         height={144}
-        className="aspect-square min-w-[9rem] rounded object-contain ring"
+        className="aspect-square min-w-[9rem] rounded object-contain"
       />
       <section>
         <h2 className="font-fredoka text-2xl text-gray-800 lg:text-xl">
@@ -40,7 +48,12 @@ const UpdateCard = ({ data }) => {
             </svg>
           </Link>
 
-          <button className="rounded bg-red-600/30 p-2 outline-none ring-red-500 ring-offset-2 transition-all duration-200 hover:bg-red-600 hover:text-white focus:ring">
+          <button
+            onClick={() => {
+              openModal();
+            }}
+            className="rounded bg-red-600/30 p-2 outline-none ring-red-500 ring-offset-2 transition-all duration-200 hover:bg-red-600 hover:text-white focus-visible:ring"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -57,6 +70,15 @@ const UpdateCard = ({ data }) => {
               <span>Delete Toy</span>
             </svg>
           </button>
+          {isOpen && (
+            <Delete
+              obj={data}
+              changeState={changeState}
+              state={state}
+              isOpen={isOpen}
+              setIsOpen={setIsOpen}
+            />
+          )}
           <Link
             to={`/toys/${data._id}`}
             className="font-fredoka rounded-full bg-gray-800 px-6 py-[.4rem] text-sm uppercase text-white outline-none ring-gray-600/80 ring-offset-2 transition-all duration-200 hover:bg-gray-800/95 focus:ring"
