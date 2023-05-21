@@ -38,14 +38,52 @@ async function run() {
     });
 
     app.get("/toys", async (req, res) => {
-      const cursor = toys.find().limit(20),
-        result = await cursor.toArray();
+      let query = {};
 
+      if (req.query?.search) {
+        query = { name: { $eq: req.query.search } };
+      }
+      const cursor = await toys
+        .find(query)
+        .limit(20)
+        .sort({ name: 1 })
+        .toArray();
+
+      res.send(cursor);
+    });
+
+    app.get("/collection/:id", async (req, res) => {
+      const filter = { _id: new ObjectId(req.params.id) },
+        cursor = await userToys
+          .find(filter, {
+            price: 1,
+            detail_description: 1,
+            available_quantity: 1,
+          })
+          .toArray();
+
+      res.send(cursor);
+    });
+
+    app.put("/collection/edit/:id", async (req, res) => {
+      const { price, available_quantity, detail_description } = req.body;
+
+      const filter = { _id: new ObjectId(req.params.id) },
+        options = { upsert: true },
+        toy = {
+          $set: {
+            price: price,
+            available_quantity: available_quantity,
+            detail_description: detail_description,
+          },
+        };
+
+      const result = await userToys.updateOne(filter, toy, options);
       res.send(result);
     });
 
     app.get("/collection", async (req, res) => {
-      const cursor = userToys.find(),
+      const cursor = userToys.find().sort({ name: 1 }),
         result = await cursor.toArray();
 
       res.send(result);
