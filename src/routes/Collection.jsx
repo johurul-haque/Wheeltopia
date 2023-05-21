@@ -1,5 +1,5 @@
 import { Link, useLoaderData } from "react-router-dom";
-import RowCard from "../components/RowCard";
+import { UpdateCard } from "../components/RowCard";
 import useTitle from "../hooks/useTitle";
 
 const Collection = () => {
@@ -22,7 +22,7 @@ const Collection = () => {
           </Link>
         </div>
       ) : (
-        toys.map((obj) => <RowCard key={obj._id} data={obj} />)
+        toys.map((obj) => <UpdateCard key={obj._id} data={obj} />)
       )}
     </section>
   );

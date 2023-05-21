@@ -1,8 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 
-const RowCard = ({ data }) => {
-  console.log(data);
+const UpdateCard = ({ data }) => {
   return (
     <article className="flex items-center gap-4 rounded-md border p-4">
       <img
@@ -69,4 +68,55 @@ const RowCard = ({ data }) => {
     </article>
   );
 };
-export default RowCard;
+
+const ShowCard = ({ data }) => {
+  const price = (data.price + "").split(".");
+  return (
+    <article className="relative flex items-start gap-4 rounded-md border p-4">
+      <img
+        src={data.picture_url}
+        alt={data.name}
+        width={144}
+        height={144}
+        className="aspect-square min-w-[9rem] rounded object-contain"
+      />
+      <span className="absolute left-4 top-4 max-w-fit rounded-full border bg-white px-3 py-1 text-xs">
+        <span className="sr-only">Category</span>
+        {data.category}
+      </span>
+      <section>
+        <h2 className="font-fredoka text-2xl text-gray-800 lg:text-xl">
+          {data.name}
+        </h2>
+        <span className="mb-1 mt-1 block text-2xl font-semibold text-gray-800">
+          <span className="mr-1 text-slate-500">$</span>
+          {price[0]}
+          <sup className="ml-[.17rem] text-xs font-semibold text-gray-600">
+            {price[1] && price[1]}
+          </sup>
+        </span>
+        <div className="flex items-center gap-4">
+          <Link
+            to={`/toys/`}
+            className="font-fredoka rounded-full bg-gray-800 px-6 py-[.48rem] text-sm uppercase text-white outline-none ring-gray-600/80 ring-offset-2 transition-all duration-200 hover:bg-gray-800/95 focus:ring"
+          >
+            View
+          </Link>
+          <p className="text-sm text-gray-700">
+            Quantity{" "}
+            <span className="block text-base font-semibold text-gray-800">
+              56
+            </span>
+          </p>
+          <p className="text-sm text-gray-700">
+            Seller{" "}
+            <span className="block text-base font-semibold text-gray-800">
+              Anyone
+            </span>
+          </p>
+        </div>
+      </section>
+    </article>
+  );
+};
+export { UpdateCard, ShowCard };

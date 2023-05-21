@@ -21,17 +21,17 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 -mb-1 w-full border-b bg-slate-50/95 px-4 py-3 backdrop-blur-3xl sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 -mb-1 w-full border-b bg-slate-100/95 px-4 py-3 backdrop-blur-3xl sm:px-6 lg:px-8">
       <div className="mx-auto flex max-w-7xl items-center justify-between text-gray-900">
         <Logo />
         <nav
           id="main-nav"
-          className="left-0 right-0 top-20 flex origin-top-right items-center gap-x-7 gap-y-9 transition-all duration-300 focus-visible:scale-0 max-md:absolute max-md:h-screen max-md:scale-0 max-md:flex-col max-md:bg-slate-50/95 max-md:backdrop-blur-3xl"
+          className="left-0 right-0 top-20 flex origin-top-right items-center gap-x-7 gap-y-9 transition-all duration-300 focus-visible:scale-0 max-md:absolute max-md:h-screen max-md:scale-0 max-md:flex-col max-md:bg-slate-100/95 max-md:backdrop-blur-3xl"
         >
           <ul className="flex items-center justify-between gap-9 max-md:mt-10 max-md:flex-col max-md:text-xl max-md:font-semibold">
             {[
               ["Home", "/"],
-              ["All Toys", "/alltoys"],
+              ["All Toys", "/toys"],
               ["Blogs", "/blogs"],
             ].map(([title, path], i) => (
               <li key={i} onClick={removeNav}>

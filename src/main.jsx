@@ -10,6 +10,7 @@ import Blog from "./routes/Blog";
 import Collection from "./routes/Collection";
 import ErrorPage from "./routes/ErrorPage";
 import Private from "./routes/Private.jsx";
+import Toys from "./routes/Toys";
 import Root from "./routes/root.jsx";
 
 const server = import.meta.env.VITE_SERVER;
@@ -45,6 +46,11 @@ const router = createBrowserRouter([
             <Collection />
           </Private>
         ),
+      },
+      {
+        path: "/toys",
+        element: <Toys />,
+        loader: () => fetch(`${server}/toys`),
       },
       {
         path: "/login",

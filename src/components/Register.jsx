@@ -20,7 +20,6 @@ const Register = () => {
       password = form.password.value,
       profile = form.profile.value;
 
-    console.log({ email, user, password, profile });
     if (password.length < 6) {
       setError(
         <p className="-mt-2 text-left text-sm">
@@ -30,12 +29,11 @@ const Register = () => {
       );
     } else {
       createUser(email, password)
-        .then((userCredintial) => {
+        .then(() => {
           updateProfile(auth.currentUser, {
             displayName: user,
             photoURL: profile,
           });
-          console.log(userCredintial.user);
           form.reset();
           setError(null);
         })
