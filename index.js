@@ -65,6 +65,12 @@ async function run() {
       res.send(cursor);
     });
 
+    app.delete("/collection/:id", async (req, res) => {
+      const query = { _id: new ObjectId(req.params.id) },
+        result = await userToys.deleteOne(query);
+      res.send(result);
+    });
+
     app.put("/collection/edit/:id", async (req, res) => {
       const { price, available_quantity, detail_description } = req.body;
 
