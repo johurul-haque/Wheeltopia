@@ -38,7 +38,7 @@ async function run() {
     });
 
     app.get("/toys", async (req, res) => {
-      const cursor = toys.find(),
+      const cursor = toys.find().limit(20),
         result = await cursor.toArray();
 
       res.send(result);
