@@ -52,15 +52,16 @@ async function run() {
       res.send(cursor);
     });
 
+    app.get("/toys/:id", async (req, res) => {
+      const filter = { _id: new ObjectId(req.params.id) },
+        cursor = await toys.find(filter).toArray();
+
+      res.send(cursor);
+    });
+
     app.get("/collection/:id", async (req, res) => {
       const filter = { _id: new ObjectId(req.params.id) },
-        cursor = await userToys
-          .find(filter, {
-            price: 1,
-            detail_description: 1,
-            available_quantity: 1,
-          })
-          .toArray();
+        cursor = await userToys.find(filter).toArray();
 
       res.send(cursor);
     });
