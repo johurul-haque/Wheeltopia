@@ -9,7 +9,7 @@ const Collection = () => {
   const [toys, setToys] = useState(data);
 
   return (
-    <section className="mx-auto my-10 grid max-w-7xl gap-6 py-8 sm:px-6 lg:grid-cols-2 lg:px-8">
+    <section className="mx-auto my-10 grid max-w-7xl gap-6 px-4 py-8 sm:px-6 lg:grid-cols-2 lg:px-8">
       <h1 className="col-span-full mb-5 text-center text-4xl font-bold text-gray-800">
         My Toys
       </h1>

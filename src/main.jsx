@@ -10,6 +10,7 @@ import Blog from "./routes/Blog";
 import Collection from "./routes/Collection";
 import ErrorPage from "./routes/ErrorPage";
 import Private from "./routes/Private.jsx";
+import ToyDetails from "./routes/ToyDetails";
 import Toys from "./routes/Toys";
 import Update from "./routes/Update";
 import Root from "./routes/root.jsx";
@@ -61,6 +62,16 @@ const router = createBrowserRouter([
         path: "/toys",
         element: <Toys />,
         loader: () => fetch(`${server}/toys`),
+      },
+      {
+        path: "/toys/:id",
+        element: <ToyDetails />,
+        loader: ({ params }) => fetch(`${server}/toys/${params.id}`),
+      },
+      {
+        path: "/collection/:id",
+        element: <ToyDetails />,
+        loader: ({ params }) => fetch(`${server}/collection/${params.id}`),
       },
       {
         path: "/login",
