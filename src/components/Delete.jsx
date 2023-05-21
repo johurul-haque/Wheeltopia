@@ -2,12 +2,12 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 
-export default function Delete({ isOpen, setIsOpen, obj, changeState, state }) {
+export default function Delete({ isOpen, setIsOpen, deleteToy }) {
   function closeModal() {
     setIsOpen(false);
   }
 
-  const deleteToy = () => {
+  /*   const deleteToy = () => {
     fetch(`${import.meta.env.VITE_SERVER}/collection/${obj._id}`, {
       method: "DELETE",
     })
@@ -18,7 +18,7 @@ export default function Delete({ isOpen, setIsOpen, obj, changeState, state }) {
           changeState(filter);
         }
       });
-  };
+  }; */
 
   return (
     <>

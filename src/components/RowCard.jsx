@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import Delete from "./Delete";
 
@@ -9,6 +10,23 @@ const UpdateCard = ({ data, state, changeState }) => {
   function openModal() {
     setIsOpen(true);
   }
+
+  const change = data;
+
+  const deleteToy = () => {
+    fetch(`${import.meta.env.VITE_SERVER}/collection/${data._id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          toast.success("Toy was deleted from our Database");
+
+          const filter = state.filter((obj) => change._id != obj._id);
+          changeState(filter);
+        }
+      });
+  };
 
   return (
     <article className="flex items-center gap-4 rounded-md border p-4 max-[375px]:flex-wrap">
@@ -72,13 +90,13 @@ const UpdateCard = ({ data, state, changeState }) => {
           </button>
           {isOpen && (
             <Delete
-              obj={data}
-              changeState={changeState}
-              state={state}
               isOpen={isOpen}
+              deleteToy={deleteToy}
               setIsOpen={setIsOpen}
             />
           )}
+          <Toaster />
+
           <Link
             to={`/collection/${data._id}`}
             className="font-fredoka rounded-full bg-gray-800 px-6 py-[.4rem] text-sm uppercase text-white outline-none ring-gray-600/80 ring-offset-2 transition-all duration-200 hover:bg-gray-800/95 focus:ring"
