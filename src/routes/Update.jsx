@@ -34,7 +34,7 @@ const Update = () => {
         form.reset();
         form.price.removeAttribute("value");
         form.quantity.removeAttribute("value");
-        desc = "what";
+        form.desc.value = "";
       });
   };
 
