@@ -41,7 +41,7 @@ async function run() {
       let query = {};
 
       if (req.query?.search) {
-        query = { name: { $eq: req.query.search } };
+        query = { name: { $regex: req.query.search, $options: "i" } };
       }
       const cursor = await toys
         .find(query)
