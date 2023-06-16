@@ -1,21 +1,36 @@
 # Wheeltopia
 
-Welcome to Wheeltopia, the ultimate destination for toy car enthusiasts! Explore a thrilling collection of toy cars, including sports cars, trucks, and fire trucks, all in one place.
+Welcome to Wheeltopia, the go to destination for toy car enthusiasts! Explore a thrilling collection of toy cars, including sports cars, trucks, and fire trucks, all in one place.
 
-## Features
+## Technologies Used
+
+- **React**: A popular JavaScript library for building user interfaces with reusable components and efficient rendering.
+
+- **Firebase**: A comprehensive platform for building web and mobile applications, providing hosting, real-time database, authentication, and more.
+
+- **React Router**: A routing library for React applications, enabling seamless navigation between different pages and components.
+
+- **TailwindCSS**: A highly customizable CSS framework that allows for rapid and responsive UI development.
+
+- **Headless UI**: Completely unstyled, fully accessible UI components, designed to integrate beautifully with Tailwind CSS.
+
+
+## Site Overview
 
 - **Categories:** Browse through different categories of toy cars, including sports cars, trucks, and fire trucks.
+  
 - **Product Showcase:** Each toy car listing includes a picture, name, seller information, category, price, rating, available quantity, and a detailed description.
 - **Search Functionality:** Easily search for specific toy cars by name or category.
-- **Interactive Interface:** The website features a user-friendly interface, making it enjoyable and easy for kids to browse and discover their favorite toy cars.
+- **Minimalist Interface:** The website features a user-friendly interface, making it enjoyable and easy for kids to browse and discover their favorite toy-cars.
 
 
-Visit the site [Wheeltopia](https://wheeltopia.vercel.app/).
 
+## Support
 
-## Feedback
+If you have any questions or feedback, please reach out to my [linkedin](https://www.linkedin.com/in/johurul-haque/).
 
-We value your feedback and suggestions to enhance the Wheeltopia website. If you have any questions, comments, or ideas for improvements, please reach out to us at [mdjohurulhaquej@gmail.com](mailto:mdjohurulhaquej@gmail.com).
+## License
 
-Thank you for visiting Wheeltopia and have a fantastic time exploring the amazing world of toy cars!
+This project is licensed under the MIT License.
+
 
