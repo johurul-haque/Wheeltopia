@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import AOS from "aos";
 import { useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
-import { Link } from "react-router-dom";
-import Delete from "./Delete";
+import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
+import Delete from './Delete';
 AOS.init();
 
 const UpdateCard = ({ data, state, changeState }) => {
@@ -17,12 +17,12 @@ const UpdateCard = ({ data, state, changeState }) => {
 
   const deleteToy = () => {
     fetch(`${import.meta.env.VITE_SERVER}/collection/${data._id}`, {
-      method: "DELETE",
+      method: 'DELETE',
     })
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount > 0) {
-          toast.success("Toy was deleted from our Database");
+          toast.success('Toy was deleted from our Database');
 
           const filter = state.filter((obj) => change._id != obj._id);
           changeState(filter);
@@ -32,7 +32,6 @@ const UpdateCard = ({ data, state, changeState }) => {
 
   return (
     <>
-      <Toaster />
       <article
         data-aos="fade-up"
         className="flex items-center gap-4 rounded-md border p-4 max-[375px]:flex-wrap"
@@ -170,3 +169,4 @@ const ShowCard = ({ data }) => {
   );
 };
 export { UpdateCard, ShowCard };
+

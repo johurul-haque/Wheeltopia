@@ -1,39 +1,40 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import "./index.css";
-import Authentication from "./provider/Authentication";
-import Addtoy from "./routes/Addtoy";
-import App from "./routes/App.jsx";
-import { Login, Register } from "./routes/Authenticate";
-import Blog from "./routes/Blog";
-import Collection from "./routes/Collection";
-import ErrorPage from "./routes/ErrorPage";
-import Private from "./routes/Private.jsx";
-import ToyDetails from "./routes/ToyDetails";
-import Toys from "./routes/Toys";
-import Update from "./routes/Update";
-import Root from "./routes/root.jsx";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { HelmetProvider } from 'react-helmet-async';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import './index.css';
+import Authentication from './provider/Authentication';
+import Addtoy from './routes/Addtoy';
+import App from './routes/App.jsx';
+import { Login, Register } from './routes/Authenticate';
+import Blog from './routes/Blog';
+import Collection from './routes/Collection';
+import ErrorPage from './routes/ErrorPage';
+import Private from './routes/Private.jsx';
+import ToyDetails from './routes/ToyDetails';
+import Toys from './routes/Toys';
+import Update from './routes/Update';
+import Root from './routes/root.jsx';
 
 const server = import.meta.env.VITE_SERVER;
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/",
+        path: '/',
         element: <App />,
         loader: () => fetch(`${server}/toys`),
       },
       {
-        path: "/blogs",
+        path: '/blogs',
         element: <Blog />,
       },
       {
-        path: "/addtoys",
+        path: '/addtoys',
         element: (
           <Private>
             <Addtoy />
@@ -41,7 +42,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/collection",
+        path: '/collection',
         loader: () => fetch(`${server}/collection`),
         element: (
           <Private>
@@ -50,7 +51,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/collection/edit/:id",
+        path: '/collection/edit/:id',
         loader: ({ params }) => fetch(`${server}/collection/${params.id}`),
         element: (
           <Private>
@@ -59,36 +60,46 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/toys",
+        path: '/toys',
         element: <Toys />,
         loader: () => fetch(`${server}/toys`),
       },
       {
-        path: "/toys/:id",
-        element: <ToyDetails />,
+        path: '/toys/:id',
+        element: (
+          <Private>
+            <ToyDetails />
+          </Private>
+        ),
         loader: ({ params }) => fetch(`${server}/toys/${params.id}`),
       },
       {
-        path: "/collection/:id",
-        element: <ToyDetails />,
+        path: '/collection/:id',
+        element: (
+          <Private>
+            <ToyDetails />
+          </Private>
+        ),
         loader: ({ params }) => fetch(`${server}/collection/${params.id}`),
       },
       {
-        path: "/login",
+        path: '/login',
         element: <Login />,
       },
       {
-        path: "/register",
+        path: '/register',
         element: <Register />,
       },
     ],
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Authentication>
-      <RouterProvider router={router} />
+      <HelmetProvider>
+        <RouterProvider router={router} />
+      </HelmetProvider>
     </Authentication>
   </React.StrictMode>
 );

@@ -1,9 +1,7 @@
-import toast, { Toaster } from "react-hot-toast";
-import useTitle from "../hooks/useTitle";
+import { Helmet } from 'react-helmet-async';
+import toast from 'react-hot-toast';
 
 const Addtoy = () => {
-  useTitle("Add Toy");
-
   const addToy = (e) => {
     e.preventDefault();
     const form = e.target,
@@ -30,17 +28,17 @@ const Addtoy = () => {
     };
 
     fetch(`${import.meta.env.VITE_SERVER}/collection/addtoy`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(toy),
     })
       .then((res) => res.json())
       .then((data) => {
         data.acknowledged &&
-          toast.success("Toy was added to our Database", {
-            icon: "🎉",
+          toast.success('Toy was added to our Database', {
+            icon: '🎉',
           });
       });
 
@@ -48,7 +46,9 @@ const Addtoy = () => {
   };
   return (
     <>
-      <Toaster />
+      <Helmet>
+        <title>Add your Toy - Wheeltopia</title>
+      </Helmet>
       <section className="mx-auto my-14 max-w-md flex-1 px-4 text-center text-gray-800 sm:px-6 lg:px-8">
         <h1 className="mb-7 text-4xl font-bold">Add your Toy</h1>
         <form

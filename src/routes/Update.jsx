@@ -1,10 +1,8 @@
-import toast, { Toaster } from "react-hot-toast";
-import { useLoaderData } from "react-router-dom";
-import useTitle from "../hooks/useTitle";
+import { Helmet } from 'react-helmet-async';
+import toast from 'react-hot-toast';
+import { useLoaderData } from 'react-router-dom';
 
 const Update = () => {
-  useTitle("Update Toy");
-
   const [data] = useLoaderData();
 
   const update = (e) => {
@@ -22,25 +20,27 @@ const Update = () => {
     };
 
     fetch(`${import.meta.env.VITE_SERVER}/collection/edit/${data._id}`, {
-      method: "PUT",
+      method: 'PUT',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(toy),
     })
       .then((res) => res.json())
       .then((data) => {
-        data.acknowledged && toast.success("Updated successfully");
+        data.acknowledged && toast.success('Updated successfully');
         form.reset();
-        form.price.removeAttribute("value");
-        form.quantity.removeAttribute("value");
-        form.desc.value = "";
+        form.price.removeAttribute('value');
+        form.quantity.removeAttribute('value');
+        form.desc.value = '';
       });
   };
 
   return (
     <>
-      <Toaster />
+      <Helmet>
+        <title>Update your Toy - Wheeltopia</title>
+      </Helmet>
       <section className="mx-auto my-14 max-w-md flex-1 px-4 text-center text-gray-800 sm:px-6 lg:px-8">
         <h1 className="mb-7 text-4xl font-bold">Update your Toy</h1>
         <form
