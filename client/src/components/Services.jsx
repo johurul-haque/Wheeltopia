@@ -1,18 +1,18 @@
 const Services = () => {
   return (
-    <section className="font-fredoka py-12 sm:py-16 lg:py-20">
+    <section className="font-fredoka py-7 sm:py-10 lg:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl font-medium text-gray-900">
+          <h2 className="text-2xl font-medium max-lg:text-center lg:text-3xl">
             Make every step user-centric
           </h2>
-          <p className="mt-1 text-center text-lg font-light text-gray-800">
-            Our primary goal is for the smiles on your kids
+          <p className="text-center font-light text-gray-700">
+            Our primary goal is the smile on our students
           </p>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-y-12 text-center sm:grid-cols-2 sm:gap-x-12 md:grid-cols-3 md:gap-0 xl:mt-14">
-          <div className="md:p-8 lg:p-14">
+        <div className="mt-10 grid grid-cols-1 gap-0 text-center max-sm:gap-y-12 sm:grid-cols-2 md:grid-cols-3 xl:mt-14">
+          <div className="sm:p-4 md:p-8 lg:p-14">
             <svg
               className="mx-auto"
               width="46"
@@ -48,14 +48,14 @@ const Services = () => {
                 strokeLinejoin="round"
               />
             </svg>
-            <h3 className="mt-12 text-xl font-medium text-gray-900">Support</h3>
-            <p className="mt-5 text-base text-gray-600">
+            <h3 className="mt-7 text-xl font-medium md:mt-12">Support</h3>
+            <p className="mx-auto mt-3 max-w-sm text-base text-gray-600 md:mt-5">
               Friendly assistance for a smooth experience and quick resolution
               of any inquiries or concerns.
             </p>
           </div>
 
-          <div className="md:border-l md:border-gray-200 md:p-8 lg:p-14">
+          <div className="sm:border-l sm:p-4 md:p-8 lg:p-14">
             <svg
               className="mx-auto"
               width="46"
@@ -107,14 +107,14 @@ const Services = () => {
                 strokeLinejoin="round"
               />
             </svg>
-            <h3 className="mt-12 text-xl font-medium text-gray-900">Sales</h3>
-            <p className="mt-5 text-base text-gray-600">
+            <h3 className="mt-7 text-xl font-medium md:mt-12">Sales</h3>
+            <p className="mx-auto mt-3 max-w-sm text-base text-gray-600 md:mt-5">
               Expert guidance and personalized recommendations to help you find
-              the perfect product effortlessly.
+              the perfect course effortlessly.
             </p>
           </div>
 
-          <div className="md:border-l md:border-gray-200 md:p-8 lg:p-14">
+          <div className="sm:p-4 sm:max-md:border-t md:border-l md:p-8 lg:p-14">
             <svg
               className="mx-auto"
               width="42"
@@ -157,16 +157,14 @@ const Services = () => {
                 strokeLinejoin="round"
               />
             </svg>
-            <h3 className="mt-12 text-xl font-medium text-gray-900">
-              Onboarding
-            </h3>
-            <p className="mt-5 text-base text-gray-600">
+            <h3 className="mt-7 text-xl font-medium md:mt-12">Onboarding</h3>
+            <p className="mx-auto mt-3 max-w-sm text-base text-gray-600 md:mt-5">
               Seamless transition and comprehensive training to ensure a
               successful start with our services.
             </p>
           </div>
 
-          <div className="md:border-t md:border-gray-200 md:p-8 lg:p-14">
+          <div className="sm:border-t sm:p-4 sm:max-md:border-l md:p-8 lg:p-14">
             <svg
               className="mx-auto"
               width="42"
@@ -212,14 +210,14 @@ const Services = () => {
                 strokeLinejoin="round"
               />
             </svg>
-            <h3 className="mt-12 text-xl font-medium text-gray-900">Product</h3>
-            <p className="mt-5 text-base text-gray-600">
-              Thoughtfully designed, high-quality items that inspire imagination
-              and provide endless fun.
+            <h3 className="mt-7 text-xl font-medium md:mt-12">Product</h3>
+            <p className="mx-auto mt-3 max-w-sm text-base text-gray-600 md:mt-5">
+              Thoughtfully designed, high-quality courses that inspire
+              imagination and provides in depth knowledge.
             </p>
           </div>
 
-          <div className="md:border-l md:border-t md:border-gray-200 md:p-8 lg:p-14">
+          <div className="sm:p-4 sm:max-md:border-t md:border-l md:border-t md:p-8 lg:p-14">
             <svg
               className="mx-auto"
               width="46"
@@ -246,14 +244,14 @@ const Services = () => {
                 strokeLinejoin="round"
               />
             </svg>
-            <h3 className="mt-12 text-xl font-medium text-gray-900">Quality</h3>
-            <p className="mt-5 text-base text-gray-600">
-              Uncompromising commitment to excellence in materials, service, and
-              reliability for your satisfaction.
+            <h3 className="mt-7 text-xl font-medium md:mt-12">Quality</h3>
+            <p className="mx-auto mt-3 max-w-sm text-base text-gray-600 md:mt-5">
+              Uncompromising commitment to excellence in education quality,
+              service, and reliability for your satisfaction.
             </p>
           </div>
 
-          <div className="md:border-l md:border-t md:border-gray-200 md:p-8 lg:p-14">
+          <div className="sm:border-l sm:border-t sm:p-4 md:p-8 lg:p-14">
             <svg
               className="mx-auto"
               width="44"
@@ -280,10 +278,10 @@ const Services = () => {
                 strokeLinejoin="round"
               />
             </svg>
-            <h3 className="mt-12 text-xl font-medium text-gray-900">Result</h3>
-            <p className="mt-5 text-base text-gray-600">
+            <h3 className="mt-7 text-xl font-medium md:mt-12">Result</h3>
+            <p className="mx-auto mt-3 max-w-sm text-base text-gray-600 md:mt-5">
               Dedicated to achieving outstanding outcomes that bring smiles and
-              lasting joy to our customers.
+              lasting joy to our students.
             </p>
           </div>
         </div>

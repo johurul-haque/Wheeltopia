@@ -1,13 +1,13 @@
 import { useState } from "react";
 import Marquee from "react-fast-marquee";
-import { useLoaderData } from "react-router-dom";
-import faq from "../assets/FAQ.jpg";
-import wave from "../assets/wave.svg";
-import Cards from "../components/Cards";
-import Categories from "../components/Categories";
-import Faq from "../components/FAQ";
-import Gallery from "../components/Gallery";
-import Services from "../components/Services";
+import { useLoaderData } from 'react-router-dom';
+import wave from '../assets/svg/wave.svg';
+import Cards from '../components/Cards';
+import Categories from '../components/Categories';
+import Faq from '../components/FAQ';
+import Gallery from '../components/Gallery';
+import Services from '../components/Services';
+import Testimonial from '../components/Testimonial';
 
 const App = () => {
   const toysData = useLoaderData(),
@@ -26,7 +26,7 @@ const App = () => {
             <h1 className="text-4xl font-medium uppercase drop-shadow-[3px_3px_0_rgb(234,179,8)] md:text-5xl">
               Embark on thrilling adventures
             </h1>
-            <p className="mt-5 text-xl">
+            <p className="mt-5 max-w-lg text-xl [text-wrap:balance]">
               Explore a world of fun and excitement with our collection of toy
               cars
             </p>
@@ -46,17 +46,24 @@ const App = () => {
       </section>
       <Gallery data={toys} />
       <Categories data={toys} />
-      <div className="mx-auto my-14 flex max-w-7xl flex-wrap items-center">
-        <img
-          src={faq}
-          role="presentation"
-          className="aspect-square object-contain px-5 mix-blend-color-burn md:w-[40%]"
-        />
+      <div className="mx-auto mt-5 grid max-w-7xl items-center pb-5 pt-24 md:grid-cols-[1fr_28rem]">
+        <h2 className="font-fredoka space-x-5 text-center text-[20vw] font-bold min-[300px]:space-x-7 sm:text-[17vw] md:text-[8vw] lg:text-[12vw] xl:text-[12rem]">
+          <span className="inline-block animate-bounce">F</span>
+          <span className="inline-block animate-bounce [animation-delay:2ms]">
+            A
+          </span>
+          <span className="inline-block animate-bounce text-emerald-700">
+            Q
+          </span>
+        </h2>
+
         <Faq />
       </div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Services />
       </div>
+
+      <Testimonial />
     </>
   );
 };

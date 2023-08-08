@@ -26,3 +26,9 @@
     font-family: "Fredoka", sans-serif;
   }
 }
+
+@layer components {
+  .mySwiper [class^="swiper-button-"]::after {
+    @apply text-black opacity-80 text-3xl;
+  }
+}
