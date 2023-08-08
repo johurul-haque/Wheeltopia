@@ -116,7 +116,7 @@ const UpdateCard = ({ data, state, changeState }) => {
 };
 
 const ShowCard = ({ data }) => {
-  const price = (data.price + "").split(".");
+  const price = (data.price + '').split('.');
   return (
     <article
       data-aos="fade-up"
@@ -133,7 +133,7 @@ const ShowCard = ({ data }) => {
         <span className="sr-only">Category</span>
         {data.category}
       </span>
-      <section>
+      <section className="w-full">
         <h2 className="font-fredoka text-lg text-gray-800 sm:text-2xl lg:text-xl">
           {data.name}
         </h2>
@@ -144,21 +144,21 @@ const ShowCard = ({ data }) => {
             {price[1] && price[1]}
           </sup>
         </span>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 min-[300px]:grid-cols-2 min-[400px]:grid-cols-3">
           <Link
             to={`/toys/${data._id}`}
-            className="font-fredoka self-center justify-self-start rounded-full bg-gray-800 px-6 py-[.48rem] text-sm uppercase text-white outline-none ring-gray-600/80 ring-offset-2 transition-all duration-200 hover:bg-gray-800/95 focus:ring"
+            className="font-fredoka max-w-fit self-center rounded-full bg-gray-800 px-4 py-1 font-light lowercase tracking-wider text-white outline-offset-2 outline-slate-600 transition-opacity duration-200 hover:opacity-95"
           >
             View
           </Link>
           <p className="text-sm text-gray-700">
-            Quantity{" "}
+            Quantity{' '}
             <span className="block text-base font-semibold text-gray-800">
               {data.available_quantity}
             </span>
           </p>
           <p className="text-sm text-gray-700">
-            Seller{" "}
+            Seller{' '}
             <span className="block text-base font-semibold text-gray-800">
               {data.seller_name}
             </span>
@@ -168,5 +168,5 @@ const ShowCard = ({ data }) => {
     </article>
   );
 };
-export { UpdateCard, ShowCard };
+export { ShowCard, UpdateCard };
 

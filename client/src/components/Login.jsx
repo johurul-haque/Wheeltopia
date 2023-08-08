@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/Authentication';
@@ -7,7 +7,7 @@ const Login = () => {
   const [error, setError] = useState(null),
     [emailError, setEmailError] = useState(null);
 
-  const { logIn, setUser, popupLogin } = useContext(AuthContext);
+  const { logIn, user, setUser, popupLogin } = useContext(AuthContext);
 
   const from = useLocation().state?.from?.pathname || '/',
     navigate = useNavigate();
@@ -31,7 +31,6 @@ const Login = () => {
         .then((userCredential) => {
           setUser(userCredential.user);
           e.target.reset();
-          navigate(from, { replace: true });
         })
         .catch((error) => {
           console.error(error.message);
@@ -53,6 +52,12 @@ const Login = () => {
         });
     }
   };
+
+  useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true });
+    }
+  }, [user, from, navigate]);
 
   return (
     <>
@@ -81,7 +86,7 @@ const Login = () => {
             required
           />
           {error}
-          <button className="h-12 rounded bg-gradient-to-r from-green-600 to-lime-500 text-lg font-semibold text-white outline-none ring-green-500 ring-offset-2 focus:ring">
+          <button className="h-12 rounded bg-gradient-to-r from-green-600 to-lime-500 text-lg font-semibold text-white hover:from-green-600/90 hover:to-lime-500/90">
             Continue
           </button>
         </form>
@@ -98,7 +103,7 @@ const Login = () => {
         </div>
         <button
           onClick={popupLogin}
-          className="flex h-12 w-full items-center gap-3 rounded border px-4 text-base font-medium text-gray-600 outline-none ring-green-500 ring-offset-2 transition-all duration-200 hover:bg-gray-200 focus:ring"
+          className="flex h-12 w-full items-center gap-3 rounded border px-4 text-base font-medium text-gray-600 transition-all duration-200 hover:bg-gray-200"
         >
           <img
             src="/google.svg"

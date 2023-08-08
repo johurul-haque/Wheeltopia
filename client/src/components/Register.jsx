@@ -1,13 +1,16 @@
 import { updateProfile } from "firebase/auth";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/Authentication';
 
 const Register = () => {
   const [error, setError] = useState(null);
 
-  const { auth, createUser, popupLogin } = useContext(AuthContext);
+  const { auth, user, createUser, popupLogin } = useContext(AuthContext);
+
+  const from = useLocation().state?.from?.pathname || '/',
+    navigate = useNavigate();
 
   const register = (e) => {
     e.preventDefault();
@@ -38,6 +41,11 @@ const Register = () => {
         .catch((error) => console.error(error.message));
     }
   };
+  useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true });
+    }
+  }, [user, from, navigate]);
 
   return (
     <>
@@ -78,7 +86,7 @@ const Register = () => {
             className="h-12 rounded border-2 px-4 outline-none transition-all duration-200 focus:border-green-500"
             placeholder="Photo URL"
           />
-          <button className="h-12 rounded bg-gradient-to-r from-green-600 to-lime-500 text-lg font-semibold text-white outline-none ring-green-500 ring-offset-2 hover:from-green-600/90 hover:to-lime-500/90 focus:ring">
+          <button className="h-12 rounded bg-gradient-to-r from-green-600 to-lime-500 text-lg font-semibold text-white hover:from-green-600/90 hover:to-lime-500/90">
             Continue
           </button>
         </form>
@@ -95,7 +103,7 @@ const Register = () => {
         </div>
         <button
           onClick={popupLogin}
-          className="flex h-12 w-full items-center gap-3 rounded border px-4 text-base font-medium text-gray-600 outline-none ring-green-500 ring-offset-2 transition-all duration-200 hover:bg-gray-200 focus:ring"
+          className="flex h-12 w-full items-center gap-3 rounded border px-4 text-base font-medium text-gray-600 transition-all duration-200 hover:bg-gray-200"
         >
           <img
             src="/google.svg"

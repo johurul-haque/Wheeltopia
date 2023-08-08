@@ -29,11 +29,14 @@ const Categories = ({ data }) => {
         Shop our heart-warming products from their category
       </p>
       <div className="my-5 flex gap-3 px-3 max-sm:overflow-x-auto sm:justify-center sm:gap-x-5">
-        {["Sports Car", "SUV", "Fire Truck"].map((element, i) => (
+        {['Sports Car', 'SUV', 'Fire Truck'].map((element, i) => (
           <button
             onClick={selectCategory}
-            className="min-w-fit rounded-full border px-5 py-1 outline-none ring-gray-200 ring-offset-2 transition duration-200 hover:bg-gray-200 focus:ring"
+            className={`min-w-fit rounded-full border px-5 py-1 outline-4 outline-offset-[3px] outline-gray-200 transition duration-200 disabled:hover:bg-gray-200 sm:hover:bg-gray-100 ${
+              info[1].title === element ? 'bg-gray-200' : ''
+            }`}
             key={i}
+            disabled={info[1].title === element}
           >
             {element}
           </button>

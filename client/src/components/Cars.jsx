@@ -19,7 +19,7 @@ const Cars = ({ info }) => {
         <p>{info.rating} ⭐</p>
       </div>
       <Link
-        className="mt-2 self-end rounded bg-emerald-600 py-2 text-center text-white outline-none transition duration-200 hover:bg-emerald-600/90 focus:ring"
+        className="mt-2 self-end rounded bg-emerald-600 py-2 text-center text-white outline-offset-2 outline-emerald-300 transition duration-200 hover:bg-emerald-600/90"
         to={`/toys/${info._id}`}
       >
         View Details

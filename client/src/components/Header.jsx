@@ -26,7 +26,7 @@ const Header = () => {
         <Logo />
         <nav
           id="main-nav"
-          className={`left-0 right-0 flex origin-top-right items-center gap-x-7 gap-y-9 overflow-y-hidden bg-slate-100 transition-all duration-300 max-md:absolute max-md:scale-0 max-md:flex-col max-md:pb-10 max-md:shadow-[0_0_0_100vmax_rgb(241_245_249)] max-md:[clip-path:inset(0_0_-100vmax)]`}
+          className="left-0 right-0 flex origin-top-right items-center gap-x-7 gap-y-9 overflow-y-hidden bg-slate-100 transition-all duration-300 max-md:absolute max-md:scale-0 max-md:flex-col max-md:pb-10 max-md:shadow-[0_0_0_100vmax_rgb(241_245_249)] max-md:[clip-path:inset(0_0_-100vmax)]"
           style={{
             top: `${navHeight - 0.17}px`,
           }}
